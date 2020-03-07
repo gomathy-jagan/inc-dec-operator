@@ -1,0 +1,69 @@
+<table>
+  <tr>
+    <td>
+      <input
+        type="button"
+        for="txtchildcount"
+        value="How many Child Counters you need"
+      />
+    </td>
+    <td>
+      <input type="number" id="txtchildcount" #childcount [required] />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <input
+        type="button"
+        id="btnchildcount"
+        value="Show the ChildrenComponents "
+        (click)="DisplayChildren(childcount.value, childdiv)"
+      />
+    </td>
+    <td>
+      <input
+        type="button"
+        value="Reset"
+        (click)="Reset(childdiv, childcount)"
+      />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <input
+        type="button"
+        value="ShowtheTotalCount"
+        (click)="DisplayTotalCounts()"
+      />
+    </td>
+    <td>
+      <input type="text" value="{{ totalcount }}" [disabled]="true" />
+    </td>
+  </tr>
+  <!-- <div *ngif="childcount > 0"> s
+<app-operatorincdec (childincdec)="AddClickCounts($event)" name="firstchild">
+</app-operatorincdec>-->
+  <tr>
+    <div #childdiv>
+      <app-operatorincdec
+        *ngFor="let i of repeatArray"
+        (childincdec)="AddClickCounts($event)"
+      ></app-operatorincdec>
+    </div>
+    <!--  <div #childdiv>
+      <div *ngIf="repeatArray.length > 0">
+        <app-operatorincdec
+          *ngFor="let i of repeatArray"
+          (childincdec)="AddClickCounts($event)"
+        ></app-operatorincdec>
+        <br />
+      </div>
+    </div> -->
+  </tr>
+</table>
+
+<!--  (childincdec)="AddClickCounts($event)" -->
+<!-- <div *ngFor=<app-operatorincdec></app-operatorincdec>
+"let event of events" class="col-md-5">
+  <app-operatorincdec #thumbnail [event]="event"> </app-operatorincdec>
+</div> -->

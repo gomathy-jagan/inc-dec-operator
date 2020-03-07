@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script type="text/javascript"></script>
+  </head>
+
+  <body>
+    <form>
+      <div class="well hoverwell thumbnail">
+        <button type="button" class="btn btn-default">{{ count }}</button>
+        <input
+          type="button"
+          id="inc"
+          value="Increment"
+          class="form-control"
+          (click)="ClickCounter('inc')"
+        />
+        <input
+          type="button"
+          id="dec"
+          value="Decrement"
+          class="form-control"
+          (click)="ClickCounter('dec')"
+        />
+      </div>
+    </form>
+  </body>
+</html>
